@@ -1,7 +1,7 @@
 import "./style.scss";
 import { FunctionComponent } from "react";
 
-import CustomSelectTree from "../../components/custom-tree-select-test-copilot";
+import CustomSelectTree from "../../components/custom-tree-select-true";
 
 interface HomePageProps {}
 

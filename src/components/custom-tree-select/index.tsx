@@ -5,10 +5,7 @@ import {
     DownOutlined,
     UpOutlined
 } from "@ant-design/icons";
-import { useMemo, useState, 
-    // useCallback, useEffect 
-} from "react";
-// import LazyLoad from 'react-lazyload'
+import { useState} from "react";
 interface CustomTreeSelectProps {
     className?: any,
     data?: Array<any>,
