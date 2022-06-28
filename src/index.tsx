@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './styles/index.scss'
+import 'antd/dist/antd.less'
+import 'antd/dist/antd.min.css'
+// import 'swiper/swiper.scss'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

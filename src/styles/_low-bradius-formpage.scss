@@ -1,0 +1,147 @@
+.low-bradius-formpage {
+	&__title {
+		font-family: $font-nunito-bold;
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+		color: $color-primary-green;
+	}
+
+	&-form {
+		.ant-form-item-label > label {
+			font-family: $font-nunito-semi-bold;
+			font-size: 1.15rem;
+		}
+
+		div.ant-form-item {
+			margin-bottom: 1.5rem;
+		}
+
+		&__input {
+			height: 3rem;
+			display: flex;
+			align-items: center;
+			width: 100%;
+			padding: 0 1rem;
+			border-radius: 0.75rem;
+			font-size: 1rem;
+			font-family: $font-nunito-light;
+			border: 0.0625rem solid lighten($color-gray, 20%);
+
+			&:hover,
+			&:focus {
+				border-color: rgba($color-primary-green, 1);
+				outline: none;
+			}
+
+			&--area {
+				padding-top: 0.7rem;
+				padding-bottom: 0.7rem;
+			}
+
+			.ant-input-number-handler-wrap {
+				border-radius: 0 0.75rem 0.75rem 0;
+
+				.ant-input-number-handler-up {
+					border-top-right-radius: 0.75rem;
+				}
+
+				.ant-input-number-handler-down {
+					border-bottom-right-radius: 0.75rem;
+				}
+			}
+
+			.ant-input-number-input-wrap > input {
+				padding: 0;
+				height: unset;
+			}
+		}
+
+		&__select {
+			height: 3rem;
+
+			.ant-select-selector {
+				height: 100% !important;
+				display: flex;
+				align-items: center;
+				padding: 0 1rem !important;
+				border-radius: 0.75rem !important;
+				font-size: 1rem;
+				// font-family: $font-nunito-light;
+				border: 0.0625rem solid lighten($color-gray, 20%) !important;
+
+				&:hover,
+				&:focus {
+					border-color: rgba($color-primary-green, 1) !important;
+					outline: none;
+				}
+			}
+		}
+
+		&__selectprofile {
+			height: 3rem;
+			border-radius: 5rem !important;
+
+			.ant-select-selector {
+				height: 100% !important;
+				display: flex;
+				align-items: center;
+				padding: 0 1rem !important;
+				border-radius: 5rem !important;
+				font-size: 1rem;
+				font-family: $font-nunito-light;
+				border: 0.0625rem solid lighten($color-gray, 20%) !important;
+
+				&:hover,
+				&:focus {
+					border-color: rgba($color-primary-green, 1) !important;
+					outline: none;
+				}
+			}
+		}
+
+		&-submit {
+			display: flex;
+			justify-content: flex-end;
+
+			&__btn {
+				padding: 0.6rem 1.1rem;
+				border-radius: 0.625rem;
+				margin-left: 1.5rem;
+				text-transform: uppercase;
+				font-family: $font-nunito-bold;
+				border: none;
+				transition: background 0.15s linear;
+				font-size: 0.9rem;
+
+				a,
+				a:hover,
+				a:active,
+				a:visited {
+					color: inherit;
+				}
+
+				&:hover {
+					cursor: pointer;
+				}
+
+				&--cancel {
+					background-color: rgba($color-gray, 0.25);
+					color: $color-primary-green;
+
+					&:hover {
+						background-color: rgba($color-gray, 0.35);
+					}
+				}
+
+				&--submit {
+					color: $color-white;
+					background-color: $color-primary-green;
+
+					&:hover {
+						background-color: darken($color-primary-green, 2%);
+					}
+				}
+			}
+		}
+	}
+}
