@@ -1,0 +1,14 @@
+@import '../../../styles/variables';
+.d-tree{
+    .d-tree-container{
+        list-style: none;
+        display: block;
+        // -webkit-margin-before: 5px;
+        // -webkit-margin-after: 5px;
+        // margin-top: 5px;
+        // margin-bottom: 5px;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        -webkit-padding-start: 5px;
+    }
+}
