@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
 import CustomTreeNode from "../tree-node";
-import LazyLoad from 'react-lazyload'
 import "./style.scss"
 interface CustomTreeProps {
     data: any,
@@ -56,7 +55,6 @@ const CustomTree: React.FunctionComponent<CustomTreeProps> = ({
             <div className="d-tree" >
                 <ul className="test-tree d-tree-container flex-column">
                     {data.map((tree: any) => (
-                        <LazyLoad>
                         <CustomTreeNode
                             data={data}
                             node={tree} 
@@ -65,7 +63,6 @@ const CustomTree: React.FunctionComponent<CustomTreeProps> = ({
                             markChecked = {markChecked}
                             setData = {setData}
                             />
-                            </LazyLoad>
                     ))}
                 </ul>
             </div>

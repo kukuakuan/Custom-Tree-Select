@@ -1,0 +1,94 @@
+@import "../../styles/variables";
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.5;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+  .modal {
+    background: white;
+    position: absolute;
+    right: 0;
+    width: 41.25%;
+    height: fit-content;
+    .modal-header {
+        align-items: center;
+        span{
+            font-size: 20px;
+            line-height: 24px;
+            color: #161616;
+            font-weight: 400;
+            margin: 12px 0 12px 16px;
+        }
+        .ant-btn{
+            height: 64px !important;
+            border: none;
+            align-items: center;
+            position: absolute;
+            right: 0;
+        }
+      max-height: 6.25%;
+    }
+    .modal-content {
+        // max-height: 93.75%;
+        .ant-form{
+            width: 100%;
+            margin-top:8px;
+            .ant-form-item-input{
+                margin:8px 16px 8px 16px;
+                .ant-form-item-label>label:after{
+                    display: none !important;
+                }
+                .ant-input{
+                    // border:none;
+                    padding: 12px;
+                    background-color: #F4F4F4;
+                    // border-bottom: 1px solid;
+                    box-shadow: inset 0px -1px 0px #8D8D8D;
+                }
+            }
+            .modal-footer {
+                height:fit-content;
+                margin-top:40px;
+                .modal-close-button{
+                    background: #393939;
+                }
+                .ant-form-item{
+                    margin-bottom: 0 !important;
+                }
+              .ant-btn {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16px;
+                color: #FFFFFF;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 16px 64px 32px 16px;
+                margin:0 !important;
+                gap: 8px;
+                width: 100%;
+                margin-left: 0 !important;
+              }
+            }
+        }
+    }
+    
+  }
+}
+

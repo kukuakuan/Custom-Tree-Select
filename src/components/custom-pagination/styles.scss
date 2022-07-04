@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+.ant-row{
+    .title-span-pagination{
+        align-self: center;
+    }
+    .ant-select{
+        .ant-select-selector{
+            align-items: center;
+        }
+        .ant-select-arrow{
+            font-size: 10px;
+            color: black;
+        }
+    }
+}

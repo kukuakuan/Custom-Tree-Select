@@ -2,6 +2,8 @@ import "./style.scss";
 import { FunctionComponent } from "react";
 
 import CustomSelectTree from "../../components/custom-tree-select-true";
+import { useCustomModal } from "../../components/custom-modal/use-modal";
+import CustomModal from "../../components/custom-modal";
 
 interface HomePageProps {}
 
@@ -50,9 +52,15 @@ const HomePage: FunctionComponent<HomePageProps> = () => {
       title: "Level 1-A",
     },
   ];
+  const {isShowing, toggle} = useCustomModal();
   return (
     <div style={{ textAlign: "center" }}>
       <CustomSelectTree data={testTreeData} className="custom-tree" />
+      <button className="button-default" onClick={toggle}>Show Modal</button>
+      <CustomModal
+        isShowing={isShowing}
+        hide={toggle}
+      />
     </div>
   );
 };

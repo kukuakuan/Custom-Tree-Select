@@ -1,0 +1,16 @@
+@import '../../../../styles/variables';
+.customer-body-content-header{
+    margin: 16px 32px 16px 32px;
+    width: 100%;
+    .ant-col{
+        .ant-breadcrumb{
+            letter-spacing: 0.16px;
+            .bread-crum-item{
+                font-size: 14px;
+            }
+            .bread-crum-last{
+                color: #0F62FE;
+            }
+        }
+    }
+}

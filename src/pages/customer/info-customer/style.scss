@@ -1,0 +1,98 @@
+@import '../../../styles/variables';
+.ant-col{
+    .ant-row{
+        .ant-form{
+            .ant-form-item-label>label.ant-form-item-required:not(.ant-form-item-required-mark-optional):before {
+                display: none;
+            }
+            .label-title{
+                .ant-col{
+                    >span{
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 16px;
+                        display: flex;
+                        align-items: center;
+                        letter-spacing: 0.16px;
+                        color: #000000;
+                    }
+                }
+            }
+            .input-item{
+                margin: 32px 0 32px 0;
+                .ant-form-item-input{
+                    margin:8px 0px 8px 0px;
+                    .ant-form-item-label>label:after{
+                        display: none !important;
+                    }
+                    .ant-input{
+                        // border:none;
+                        padding: 12px;
+                        background-color: #F4F4F4;
+                        // border-bottom: 1px solid;
+                        box-shadow: inset 0px -1px 0px #8D8D8D;
+                    }
+                }
+            .ant-table{
+                    .ant-table-thead{
+                        .ant-table-cell{
+                            background-color: #E0E0E0;
+                        }
+                    }
+                }
+            }
+            .button-bottom{
+                margin-top: 124px;
+                height:40px;
+                .ant-btn{
+                    height: 40px;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 16px;
+                    display: flex;
+                    align-items: center;
+                    letter-spacing: 0.16px;
+    
+                    /* White/White */
+    
+                    color: #FFFFFF;
+                    width: 100%;
+                }
+                .close-btn{
+                    .ant-row{
+                        position: absolute;
+                        right:0;
+                        margin-right:15px;
+                    }
+                    background-color: #393939;
+                }
+            }
+            .ant-tabs{
+                .ant-tabs-nav{
+                    .ant-tabs-nav-wrap{
+                        margin-left: 32px;
+                    }
+                }
+                .ant-tabs-content-holder{
+                    .ant-tabs-content{
+                        .tab-customer-group{
+                            margin-left: 24px;
+                            margin-bottom: 100px;
+                            .ant-col{
+                                .ant-row{
+                                    .ant-col{
+                                        .ant-row{
+                                            margin-left: 8px !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
