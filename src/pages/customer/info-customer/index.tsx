@@ -60,7 +60,7 @@ const InfoCustomer: React.FunctionComponent<InfoCustomerProps> = (props) => {
             editable: true,
         },
         {
-            title: "operation",
+            title: "Xóa",
             dataIndex: "operation",
             render: (_: any, record: any) =>
               dataSource.length >= 1 ? (
@@ -68,7 +68,7 @@ const InfoCustomer: React.FunctionComponent<InfoCustomerProps> = (props) => {
                   title="Sure to delete?"
                   onConfirm={() => handleDelete(record.key)}
                 >
-                  <a>Delete</a>
+                  <span style={{color:"blue"}}>Delete</span>
                 </Popconfirm>
               ) : null
           }
