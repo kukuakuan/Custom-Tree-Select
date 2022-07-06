@@ -440,28 +440,6 @@ const NewCustomer: React.FunctionComponent<NewCustomerProps> = (props) => {
                                             pagination={false}
                                             columns={columnsTableContact}
                                         >
-                                            {/* <Table.Column
-                                                title="STT"
-                                                dataIndex="stt"
-                                                key="1"
-                                                width="5%"
-                                                render={(value, item, index) => index + 1}
-                                            />
-                                            {[
-                                                ...Array.from(
-                                                    {
-                                                        length: columnsTableContact.length,
-                                                    },
-                                                    (_, i) => i
-                                                ),
-                                            ].map((i) => (
-                                                <Table.Column
-                                                    key={`${count}`}
-                                                    title={columnsTableContact[i].title}
-                                                    dataIndex={columnsTableContact[i].dataIndex}
-                                                />
-                                            ))} */}
-
                                         </Table>
                                     </Form.Item>
                                     <Button

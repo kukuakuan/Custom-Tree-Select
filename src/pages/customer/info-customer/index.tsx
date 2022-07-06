@@ -1,5 +1,5 @@
 import './style.scss'
-import { Col, Row, Tabs, Form, Button, Space, Table, Input, message, Dropdown, Menu } from "antd";
+import { Col, Row, Tabs, Form, Button, Space, Table, Input, message, Dropdown, Menu, Popconfirm } from "antd";
 import React, { useMemo } from "react";
 import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -38,6 +38,13 @@ const InfoCustomer: React.FunctionComponent<InfoCustomerProps> = (props) => {
     }
     const defaultTableContact = [
         {
+            title:"STT",
+            dataIndex:"stt",
+            key:"1",
+            width:"5%",
+            render:(value:any, item:any, index:number) => index + 1,
+        },
+        {
             title: 'Tên liên hệ',
             dataIndex: 'contactName',
             editable: true,
@@ -52,6 +59,19 @@ const InfoCustomer: React.FunctionComponent<InfoCustomerProps> = (props) => {
             dataIndex: 'contactInfo',
             editable: true,
         },
+        {
+            title: "operation",
+            dataIndex: "operation",
+            render: (_: any, record: any) =>
+              dataSource.length >= 1 ? (
+                <Popconfirm
+                  title="Sure to delete?"
+                  onConfirm={() => handleDelete(record.key)}
+                >
+                  <a>Delete</a>
+                </Popconfirm>
+              ) : null
+          }
     ]
     const itemDropdown = [
         {
@@ -222,6 +242,10 @@ const InfoCustomer: React.FunctionComponent<InfoCustomerProps> = (props) => {
         newData.splice(index, 1, { ...item, ...row });
         setDataSource(newData);
     };
+    const handleDelete = (key: any) => {
+        const newData = dataSource.filter((item) => item.key !== key);
+        setDataSource(newData);
+      };
     const handleAdd = () => {
         const newData = {
             key: count,
@@ -555,29 +579,8 @@ const InfoCustomer: React.FunctionComponent<InfoCustomerProps> = (props) => {
                                                     bordered
                                                     dataSource={dataSource}
                                                     pagination={false}
+                                                    columns={columnsTableContact}
                                                 >
-                                                    <Table.Column
-                                                        title="STT"
-                                                        dataIndex="stt"
-                                                        key="1"
-                                                        width="5%"
-                                                        render={(value, item, index) => index + 1}
-                                                    />
-                                                    {[
-                                                        ...Array.from(
-                                                            {
-                                                                length: columnsTableContact.length,
-                                                            },
-                                                            (_, i) => i
-                                                        ),
-                                                    ].map((i) => (
-                                                        <Table.Column
-                                                            key={`${count}`}
-                                                            title={columnsTableContact[i].title}
-                                                            dataIndex={columnsTableContact[i].dataIndex}
-                                                        />
-                                                    ))}
-
                                                 </Table>
                                             </Form.Item>
                                             <Button
