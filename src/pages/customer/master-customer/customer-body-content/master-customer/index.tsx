@@ -9,7 +9,7 @@ import {
   UploadOutlined
 } from "@ant-design/icons";
 import * as XLSX from "xlsx";
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import FilterIcon from '../../../../../constants/icon/setting-4.svg'
 import DocumentPDF from '../../../../../constants/icon/document--epdf.svg'
 import FillCircle from '../../../../../constants/icon/circle-fill.svg'
@@ -143,14 +143,11 @@ const MasterCustomer: React.FunctionComponent<MasterCustomerProps> = () => {
   const [pageSize, setPageSize] = useState(10);
   const [visibleInputSearch, setVisibleInputSearch] = useState(false);
   const [searchText, setSearchText] = useState("");
-  // const [itemDropdown, setItemDropdown] = useState(Array<any>);
   const [dropdownTitle, setDropdownTitle] = useState(itemDropdown[0]?.title);
-  // const { isShowing, toggle } = useCustomModal();
   const onHandleChangeSort = ({ ...params }) => {
     setDropdownTitle(itemDropdown[params.key].title);
   };
   const menuFilter = () => {
-    // setItemDropdown(dropdown);
     return (
       // tslint:disable-next-line: jsx-wrap-multiline
       <Menu onClick={onHandleChangeSort}
@@ -190,8 +187,14 @@ const MasterCustomer: React.FunctionComponent<MasterCustomerProps> = () => {
   };
 
   const onAdvancedSearch = (filterData: any) => {
-    // const dataFilter = 
-    // setData(dataFilter);
+    var dataFilter = data
+    for(let i in filterData){
+      if(filterData[i] !== undefined) {
+        dataFilter = dataFilter.filter(customer => customer[i].toString().includes(String(filterData[i])))
+      }
+    }
+    console.log(dataFilter)
+    setData(dataFilter);
   };
 
   const onFinish = async (values: any) => {

@@ -1,4 +1,4 @@
-import { Button, Col, Form, Input, message, Row, Space, Table } from 'antd';
+import { Button, Col, Form, Input, message, Popconfirm, Row, Space, Table } from 'antd';
 import React, { useContext, useEffect, useRef } from 'react';
 import { useState } from 'react';
 import CustomerBodyHeader from '../layout/customer-body-header';
@@ -24,6 +24,13 @@ export interface UseInUseContextInterface {
 const NewCustomer: React.FunctionComponent<NewCustomerProps> = (props) => {
     const defaultTableContact = [
         {
+            title:"STT",
+            dataIndex:"stt",
+            key:"1",
+            width:"5%",
+            render:(value:any, item:any, index:number) => index + 1,
+        },
+        {
             title: 'Tên liên hệ',
             dataIndex: 'contactName',
             editable: true,
@@ -38,6 +45,19 @@ const NewCustomer: React.FunctionComponent<NewCustomerProps> = (props) => {
             dataIndex: 'contactInfo',
             editable: true,
         },
+        {
+            title: "operation",
+            dataIndex: "operation",
+            render: (_: any, record: any) =>
+              dataSource.length >= 1 ? (
+                <Popconfirm
+                  title="Sure to delete?"
+                  onConfirm={() => handleDelete(record.key)}
+                >
+                  <a>Delete</a>
+                </Popconfirm>
+              ) : null
+          }
     ]
     const rules = {
         customerId: [{ required: true, message: 'Hãy nhập mã khách hàng!' }],
@@ -67,7 +87,7 @@ const NewCustomer: React.FunctionComponent<NewCustomerProps> = (props) => {
         return (
             <Form form={form} component={false}>
                 <EditableContext.Provider value={form}>
-                    <tr {...props} />
+                    <tr className="hellotest" {...props} />
                 </EditableContext.Provider>
             </Form>
         );
@@ -93,9 +113,9 @@ const NewCustomer: React.FunctionComponent<NewCustomerProps> = (props) => {
         const form: any = useContext(EditableContext);
         useEffect(() => {
             if (editing) {
-                if (inputRef.current != null) {
-                    inputRef.current.focus();
-                }
+                // if (inputRef.current != null) {
+                    inputRef.current?.focus();
+                // }
             }
         }, [editing]);
 
@@ -162,6 +182,10 @@ const NewCustomer: React.FunctionComponent<NewCustomerProps> = (props) => {
         newData.splice(index, 1, { ...item, ...row });
         setDataSource(newData);
     };
+    const handleDelete = (key: any) => {
+        const newData = dataSource.filter((item) => item.key !== key);
+        setDataSource(newData);
+      };
     const handleAdd = () => {
         const newData = {
             key: count,
@@ -414,8 +438,9 @@ const NewCustomer: React.FunctionComponent<NewCustomerProps> = (props) => {
                                             bordered
                                             dataSource={dataSource}
                                             pagination={false}
+                                            columns={columnsTableContact}
                                         >
-                                            <Table.Column
+                                            {/* <Table.Column
                                                 title="STT"
                                                 dataIndex="stt"
                                                 key="1"
@@ -435,7 +460,7 @@ const NewCustomer: React.FunctionComponent<NewCustomerProps> = (props) => {
                                                     title={columnsTableContact[i].title}
                                                     dataIndex={columnsTableContact[i].dataIndex}
                                                 />
-                                            ))}
+                                            ))} */}
 
                                         </Table>
                                     </Form.Item>
